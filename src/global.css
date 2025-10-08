@@ -1,0 +1,420 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.9856 0.0084 56.3169);
+  --foreground: oklch(0.3353 0.0132 2.7676);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.3353 0.0132 2.7676);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.3353 0.0132 2.7676);
+  --primary: oklch(0.7357 0.1641 34.7091);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.9596 0.02 28.9029);
+  --secondary-foreground: oklch(0.5587 0.1294 32.7364);
+  --muted: oklch(0.9656 0.0176 39.4009);
+  --muted-foreground: oklch(0.5534 0.0116 58.0708);
+  --accent: oklch(0.8278 0.1131 57.9984);
+  --accent-foreground: oklch(0.3353 0.0132 2.7676);
+  --destructive: oklch(0.6122 0.2082 22.241);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9296 0.037 38.6868);
+  --input: oklch(0.9296 0.037 38.6868);
+  --ring: oklch(0.7357 0.1641 34.7091);
+  --chart-1: oklch(0.7357 0.1641 34.7091);
+  --chart-2: oklch(0.8278 0.1131 57.9984);
+  --chart-3: oklch(0.8773 0.0763 54.9314);
+  --chart-4: oklch(0.82 0.1054 40.8859);
+  --chart-5: oklch(0.6368 0.1306 32.0721);
+  --sidebar: oklch(0.9656 0.0176 39.4009);
+  --sidebar-foreground: oklch(0.3353 0.0132 2.7676);
+  --sidebar-primary: oklch(0.7357 0.1641 34.7091);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.8278 0.1131 57.9984);
+  --sidebar-accent-foreground: oklch(0.3353 0.0132 2.7676);
+  --sidebar-border: oklch(0.9296 0.037 38.6868);
+  --sidebar-ring: oklch(0.7357 0.1641 34.7091);
+  --font-sans: Montserrat, sans-serif;
+  --font-serif: Merriweather, serif;
+  --font-mono: Ubuntu Mono, monospace;
+  --radius: 0.625rem;
+  --shadow-x: 0px;
+  --shadow-y: 6px;
+  --shadow-blur: 12px;
+  --shadow-spread: -3px;
+  --shadow-opacity: 0.09;
+  --shadow-color: hsl(0 0% 0%);
+  --shadow-2xs: 0px 6px 12px -3px hsl(0 0% 0% / 0.04);
+  --shadow-xs: 0px 6px 12px -3px hsl(0 0% 0% / 0.04);
+  --shadow-sm:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 1px 2px -4px hsl(0 0% 0% / 0.09);
+  --shadow:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 1px 2px -4px hsl(0 0% 0% / 0.09);
+  --shadow-md:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 2px 4px -4px hsl(0 0% 0% / 0.09);
+  --shadow-lg:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 4px 6px -4px hsl(0 0% 0% / 0.09);
+  --shadow-xl:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 8px 10px -4px hsl(0 0% 0% / 0.09);
+  --shadow-2xl: 0px 6px 12px -3px hsl(0 0% 0% / 0.22);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: oklch(0.2569 0.0169 352.4042);
+  --foreground: oklch(0.9397 0.0119 51.3156);
+  --card: oklch(0.3184 0.0176 341.4465);
+  --card-foreground: oklch(0.9397 0.0119 51.3156);
+  --popover: oklch(0.3184 0.0176 341.4465);
+  --popover-foreground: oklch(0.9397 0.0119 51.3156);
+  --primary: oklch(0.7357 0.1641 34.7091);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.3637 0.0203 342.2664);
+  --secondary-foreground: oklch(0.9397 0.0119 51.3156);
+  --muted: oklch(0.2848 0.0159 343.6554);
+  --muted-foreground: oklch(0.8378 0.0237 52.6346);
+  --accent: oklch(0.8278 0.1131 57.9984);
+  --accent-foreground: oklch(0.2569 0.0169 352.4042);
+  --destructive: oklch(0.6122 0.2082 22.241);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.3637 0.0203 342.2664);
+  --input: oklch(0.3637 0.0203 342.2664);
+  --ring: oklch(0.7357 0.1641 34.7091);
+  --chart-1: oklch(0.7357 0.1641 34.7091);
+  --chart-2: oklch(0.8278 0.1131 57.9984);
+  --chart-3: oklch(0.8773 0.0763 54.9314);
+  --chart-4: oklch(0.82 0.1054 40.8859);
+  --chart-5: oklch(0.6368 0.1306 32.0721);
+  --sidebar: oklch(0.2569 0.0169 352.4042);
+  --sidebar-foreground: oklch(0.9397 0.0119 51.3156);
+  --sidebar-primary: oklch(0.7357 0.1641 34.7091);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.8278 0.1131 57.9984);
+  --sidebar-accent-foreground: oklch(0.2569 0.0169 352.4042);
+  --sidebar-border: oklch(0.3637 0.0203 342.2664);
+  --sidebar-ring: oklch(0.7357 0.1641 34.7091);
+  --font-sans: Montserrat, sans-serif;
+  --font-serif: Merriweather, serif;
+  --font-mono: Ubuntu Mono, monospace;
+  --radius: 0.625rem;
+  --shadow-x: 0px;
+  --shadow-y: 6px;
+  --shadow-blur: 12px;
+  --shadow-spread: -3px;
+  --shadow-opacity: 0.09;
+  --shadow-color: hsl(0 0% 0%);
+  --shadow-2xs: 0px 6px 12px -3px hsl(0 0% 0% / 0.04);
+  --shadow-xs: 0px 6px 12px -3px hsl(0 0% 0% / 0.04);
+  --shadow-sm:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 1px 2px -4px hsl(0 0% 0% / 0.09);
+  --shadow:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 1px 2px -4px hsl(0 0% 0% / 0.09);
+  --shadow-md:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 2px 4px -4px hsl(0 0% 0% / 0.09);
+  --shadow-lg:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 4px 6px -4px hsl(0 0% 0% / 0.09);
+  --shadow-xl:
+    0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 8px 10px -4px hsl(0 0% 0% / 0.09);
+  --shadow-2xl: 0px 6px 12px -3px hsl(0 0% 0% / 0.22);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/************************************** QUILL START *****************************************/
+/**
+ * Quill Editor Tailwind CSS Styles
+ * A comprehensive styling solution for Quill rich text editor with Tailwind CSS
+ */
+
+/* Toolbar Styling - Contains formatting controls */
+div.ql-toolbar.ql-snow {
+  @apply flex h-9 w-full rounded-t-md border-input bg-transparent px-3 py-1 text-sm 
+         text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent 
+         file:text-sm file:font-medium placeholder:text-muted-foreground 
+         focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring 
+         disabled:cursor-not-allowed disabled:opacity-70;
+  /* Add smooth transition for focus state */
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Editor Container - Main content area */
+div.ql-container.ql-snow {
+  @apply w-full rounded-b-md border border-input bg-background px-3 py-2 text-sm 
+         ring-offset-background file:border-0 file:bg-transparent file:text-sm 
+         file:font-medium placeholder:text-muted-foreground focus-visible:outline-none 
+         focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+         disabled:cursor-not-allowed disabled:opacity-70;
+  /* Add subtle transition for smoother interactions */
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Placeholder text styling and positioning */
+div .ql-container > .ql-editor.ql-blank::before {
+  @apply px-3 text-muted-foreground italic opacity-70;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover states for button strokes */
+button:hover .ql-stroke,
+.ql-picker-label:hover .ql-stroke {
+  @apply fill-none !stroke-primary;
+  /* Add subtle animation for icon hover */
+  transition: stroke 0.2s ease;
+  transform-origin: center;
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+/* Active state for button strokes */
+.ql-active .ql-stroke {
+  @apply fill-none !stroke-primary;
+}
+
+/* Hover states for button fills */
+button:hover .ql-fill,
+.ql-picker-label:hover .ql-fill {
+  @apply !fill-primary !stroke-none;
+  transition: fill 0.2s ease;
+}
+
+/* Active state for button fills */
+.ql-active .ql-fill {
+  @apply !fill-primary !stroke-none;
+}
+
+/* Dropdown picker label styling */
+span.ql-picker-label {
+  @apply text-muted-foreground outline rounded-md hover:!text-primary active:!text-primary;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Active state for picker labels */
+span.ql-active {
+  @apply !text-primary font-medium;
+}
+
+/* Selected item in dropdowns */
+span.ql-selected {
+  @apply !text-gray-500;
+}
+
+/* Dropdown items hover state */
+span.ql-picker-item {
+  @apply hover:!text-primary hover:bg-gray-100 dark:hover:bg-gray-800;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Default icon stroke styling */
+.ql-stroke {
+  @apply !stroke-muted-foreground;
+  transition: stroke 0.2s ease;
+}
+
+/* Expanded dropdown styling */
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  @apply rounded-md dark:border-white/20 border-gray-300;
+  transition: border-color 0.2s ease;
+}
+
+/* Dropdown options panel */
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  @apply rounded-md dark:border-white/20 text-primary hover:text-primary mt-1 bg-background shadow-md;
+  animation: fadeIn 0.2s ease-in-out;
+  transform-origin: top center;
+  border-width: 1px;
+}
+
+/* Editor content area */
+.ql-editor {
+  @apply rounded-md border-input bg-background text-sm ring-offset-background file:border-0 
+         file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground 
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+         focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70;
+  min-height: 150px; /* Set minimum height for better UX */
+  transition: background-color 0.2s ease;
+}
+
+/* Font picker - Ensure enough width for font names */
+.ql-snow .ql-picker.ql-font {
+  width: 162px !important;
+}
+
+/* Focus highlight animation for active elements */
+button.ql-active,
+.ql-picker-label.ql-active {
+  position: relative;
+  overflow: hidden;
+}
+
+button.ql-active::after,
+.ql-picker-label.ql-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: theme("--color-primary");
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Button press effect */
+.ql-toolbar button {
+  transition: transform 0.1s ease;
+}
+
+.ql-toolbar button:active {
+  transform: scale(0.95);
+}
+
+/* Editor focus state animation */
+.ql-container:focus-within {
+  animation: softGlow 2s infinite alternate;
+}
+
+/* Custom tooltip for hover info */
+.ql-toolbar button {
+  position: relative;
+}
+
+.ql-toolbar button:hover::before {
+  content: attr(aria-label);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: theme("colors.background");
+  color: theme("colors.foreground");
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 0.2s ease forwards;
+  pointer-events: none;
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes softGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(var(--ring), 0.1);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(var(--ring), 0.3);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .ql-snow .ql-picker.ql-font {
+    width: 100px !important;
+  }
+
+  div.ql-toolbar.ql-snow {
+    @apply flex-wrap;
+  }
+}
+/************************************** QUILL END *****************************************/
