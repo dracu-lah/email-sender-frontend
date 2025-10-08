@@ -85,6 +85,7 @@ const LoginPage = () => {
               <Input
                 id="email"
                 type="text"
+                placeholder="nevilkrishna@gmail.com"
                 {...register("usernameOrEmail", { required: true })}
               />
               {errors.usernameOrEmail && (
