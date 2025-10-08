@@ -209,19 +209,4 @@ export const SendEmailAPI = async (params: any) => {
   } catch (error) {
     throw error;
   }
-  try {
-    const response = await fetch("http://127.0.0.1:8000/send-email", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to send email");
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw error;
-  }
 };
