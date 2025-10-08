@@ -8,6 +8,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import routePath from "@/router/routePath";
+
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { LoginAPI } from "@/services/api";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Eye, EyeOff, LoaderIcon } from "lucide-react";
@@ -85,7 +91,7 @@ const LoginPage = () => {
               <Input
                 id="email"
                 type="text"
-                placeholder="nevilkrishna@gmail.com"
+                placeholder="johndoe@gmail.com"
                 {...register("usernameOrEmail", { required: true })}
               />
               {errors.usernameOrEmail && (
@@ -95,7 +101,24 @@ const LoginPage = () => {
               )}
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Password</Label>
+              <Label htmlFor="framework">
+                Password
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <span>
+                      <Button className="p-0" type="button" variant="link">
+                        (?)
+                      </Button>
+                    </span>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-80">
+                    <span className="text-sm opacity-60">
+                      Tip:
+                      <br /> Go to Google Account → Security → App Passwords
+                    </span>
+                  </HoverCardContent>
+                </HoverCard>
+              </Label>
               <div className="relative">
                 <Input
                   id="password"
