@@ -20,7 +20,7 @@ const Header = () => {
     <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur-lg">
       <div className="flex items-center justify-between px-4 pt-4 sm:py-2 md:px-8">
         <div className="flex items-center justify-center gap-x-2">
-          {accessToken && <SideSheet />}
+          {/* {accessToken && <SideSheet />} */}
           <Logo />
         </div>
         <div className="flex gap-4 items-center">
